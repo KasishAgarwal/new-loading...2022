@@ -1,0 +1,33 @@
+// add two complex number using operator overloading with member function in c++.
+#include<iostream>
+using namespace std;
+class complex{
+float x,y;
+public:
+complex(){};
+complex(float a , float b){
+   x=a;y=b; 
+}
+void display(){
+cout<<x<<"+i "<<y<<endl;}
+complex operator+(complex c){
+complex temp;
+temp.x=x+c.x;
+temp.y=y+c.y;
+return temp;
+}
+};
+int main(){
+float x1,y1;
+float x2,y2;
+cout<<"enter value for first complex number "<<endl;
+cin>>x1>>y1;
+cout<<"enter value for second complex number "<<endl;
+cin>>x2>>y2;
+complex c1(x1,y1);
+complex c2(x2,y2);
+complex c3;
+c3=c1+c2;
+c3.display();
+return 0;
+}
